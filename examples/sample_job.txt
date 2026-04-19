@@ -1,0 +1,31 @@
+Senior Full-Stack Engineer
+
+About the Role
+We are looking for a Senior Full-Stack Engineer to join our growing product team.
+You will design, build, and maintain high-performance web applications for our
+SaaS platform serving 500k+ users.
+
+Requirements
+- 5+ years of professional software engineering experience
+- Strong proficiency in TypeScript and React for frontend development
+- Backend experience with Node.js or Python (FastAPI / Django)
+- Experience with PostgreSQL and Redis for data storage
+- Containerisation experience with Docker and Kubernetes
+- Familiarity with cloud platforms (AWS preferred)
+- CI/CD pipeline setup and maintenance (GitHub Actions, Jenkins)
+- RESTful and GraphQL API design
+- Agile / Scrum team experience
+- Strong Git workflow knowledge
+
+Nice to Have
+- Terraform for infrastructure as code
+- Experience with Kafka or event-driven architecture
+- Knowledge of monitoring tools (Prometheus, Grafana)
+- Prior experience with microservices architecture
+
+Responsibilities
+- Lead frontend and backend feature development end-to-end
+- Collaborate with product and design teams to build user-facing features
+- Set up and maintain CI/CD pipelines
+- Conduct code reviews and mentor junior developers
+- Participate in architectural decisions

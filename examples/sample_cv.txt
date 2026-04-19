@@ -1,0 +1,37 @@
+Sarah Johnson
+sarah.johnson@email.com | +1-415-555-0192 | linkedin.com/in/sarahjohnson
+
+PROFESSIONAL SUMMARY
+Senior software engineer with 7 years of experience building scalable web applications.
+Passionate about clean architecture, developer experience, and cloud-native solutions.
+
+SKILLS
+Python, JavaScript, TypeScript, React, Node.js, PostgreSQL, Redis, Docker,
+AWS, Git, GitHub, Agile, Scrum, REST, GraphQL, CI/CD
+
+WORK EXPERIENCE
+
+Senior Software Engineer — TechCorp Inc.
+Jan 2021 – Present
+- Led migration of monolith to microservices using Python (FastAPI) and Docker
+- Built React dashboards consuming GraphQL APIs
+- Managed PostgreSQL clusters on AWS RDS
+Skills: Python, FastAPI, Docker, React, GraphQL, PostgreSQL, AWS
+
+Software Engineer — DataFlow Ltd.
+Mar 2018 – Dec 2020
+- Developed ETL pipelines using Python and Apache Airflow
+- Integrated third-party APIs using Node.js and Express
+- Deployed applications to AWS EC2 with CI/CD via GitHub Actions
+Skills: Python, Node.js, Express, AWS, CI/CD, GitHub Actions, Airflow
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of California, Berkeley — 2017
+
+CERTIFICATIONS
+AWS Solutions Architect – Associate (2022)
+Docker Certified Associate (2021)
+
+LANGUAGES
+English, French
