@@ -1,9 +1,9 @@
 """
-Anthropic Claude client with prompt caching.
+OpenAI GPT client wrapper.
 
 Usage:
-    client = LLMClient()                          # reads ANTHROPIC_API_KEY from env
-    text   = client.complete(system, user)        # cached system prompt
+    client = LLMClient()                          # reads OPENAI_API_KEY from env
+    text   = client.complete(system, user)        # text response
     data   = client.complete_json(system, user)   # parses JSON response
 """
 from __future__ import annotations
@@ -15,33 +15,31 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
-# Model to use — Sonnet is the best balance of quality and cost for this use case
-_MODEL = "claude-sonnet-4-6"
+_MODEL = "gpt-4o"
 _MAX_TOKENS = 1024
 
 
 class LLMClient:
     """
-    Thin wrapper around the Anthropic SDK.
-    - System prompt is sent with cache_control so it is cached across calls.
-    - Falls back gracefully if the API key is missing or a call fails.
+    Thin wrapper around the OpenAI SDK.
+    Falls back gracefully if the API key is missing or a call fails.
     """
 
     def __init__(self, api_key: str | None = None, model: str = _MODEL) -> None:
         self._model = model
         self._client = None
-        key = api_key or os.getenv("ANTHROPIC_API_KEY")
+        key = api_key or os.getenv("OPENAI_API_KEY")
         if not key:
             logger.warning(
-                "ANTHROPIC_API_KEY not set — LLM features will be disabled. "
+                "OPENAI_API_KEY not set — LLM features will be disabled. "
                 "Set the environment variable to enable narrative generation."
             )
             return
         try:
-            import anthropic
-            self._client = anthropic.Anthropic(api_key=key)
+            from openai import OpenAI
+            self._client = OpenAI(api_key=key)
         except ImportError:
-            logger.warning("anthropic package not installed. Run: pip install anthropic")
+            logger.warning("openai package not installed. Run: pip install openai")
 
     @property
     def available(self) -> bool:
@@ -49,25 +47,20 @@ class LLMClient:
 
     def complete(self, system: str, user: str, max_tokens: int = _MAX_TOKENS) -> str:
         """
-        Call the API with prompt caching on the system prompt.
-        Returns the text response, or an empty string on failure.
+        Call the API. Returns the text response, or empty string on failure.
         """
         if not self.available:
             return ""
         try:
-            response = self._client.messages.create(
+            response = self._client.chat.completions.create(
                 model=self._model,
                 max_tokens=max_tokens,
-                system=[
-                    {
-                        "type": "text",
-                        "text": system,
-                        "cache_control": {"type": "ephemeral"},
-                    }
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user",   "content": user},
                 ],
-                messages=[{"role": "user", "content": user}],
             )
-            return response.content[0].text.strip()
+            return response.choices[0].message.content.strip()
         except Exception as exc:
             logger.error("LLM call failed: %s", exc)
             return ""
@@ -79,23 +72,29 @@ class LLMClient:
         Like complete() but parses and returns the JSON payload.
         Returns None on parse failure.
         """
-        raw = self.complete(system, user, max_tokens=max_tokens)
-        if not raw:
+        if not self.available:
             return None
-        # Strip accidental markdown fences
-        cleaned = raw.strip()
-        if cleaned.startswith("```"):
-            cleaned = "\n".join(cleaned.split("\n")[1:])
-        if cleaned.endswith("```"):
-            cleaned = "\n".join(cleaned.split("\n")[:-1])
         try:
-            return json.loads(cleaned)
+            response = self._client.chat.completions.create(
+                model=self._model,
+                max_tokens=max_tokens,
+                response_format={"type": "json_object"},
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user",   "content": user},
+                ],
+            )
+            raw = response.choices[0].message.content.strip()
+            return json.loads(raw)
         except json.JSONDecodeError as exc:
-            logger.error("JSON parse failed (%s). Raw response:\n%s", exc, raw[:500])
+            logger.error("JSON parse failed: %s", exc)
+            return None
+        except Exception as exc:
+            logger.error("LLM call failed: %s", exc)
             return None
 
 
-# Module-level singleton — created lazily so import doesn't fail without a key
+# Module-level singleton
 _default_client: LLMClient | None = None
 
 

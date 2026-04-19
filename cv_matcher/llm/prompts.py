@@ -30,7 +30,7 @@ Your responsibilities:
 
 CV_PARSE_SYSTEM = SYSTEM_PROMPT + """
 You will receive raw CV/resume text.  Extract all available information and return \
-ONLY a valid JSON object — no markdown fences, no commentary.
+ONLY a valid JSON object — no markdown fences, no commentary. Output must be JSON.
 """
 
 CV_PARSE_USER = """\
@@ -69,7 +69,7 @@ CV TEXT:
 
 JOB_PARSE_SYSTEM = SYSTEM_PROMPT + """
 You will receive a job description.  Extract all requirements and return \
-ONLY a valid JSON object — no markdown fences, no commentary.
+ONLY a valid JSON object — no markdown fences, no commentary. Output must be JSON.
 """
 
 JOB_PARSE_USER = """\

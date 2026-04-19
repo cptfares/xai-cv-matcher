@@ -50,15 +50,53 @@ _DOMAIN_KEYWORDS = {
 class JobParser:
     """Parse a job offer from plain text or a structured dict."""
 
-    def parse(self, source: Union[str, Path, dict]) -> ParsedJob:
+    def parse(self, source: Union[str, Path, dict], enrich: bool = True) -> ParsedJob:
         if isinstance(source, dict):
-            return self._parse_dict(source)
-        path = Path(str(source))
-        if path.exists():
-            text = path.read_text(encoding="utf-8", errors="replace")
+            job = self._parse_dict(source)
         else:
-            text = str(source)
-        return self._parse_text(text)
+            path = Path(str(source))
+            text = path.read_text(encoding="utf-8", errors="replace") if path.exists() else str(source)
+            job = self._parse_text(text)
+        if enrich:
+            job = self._llm_enrich(job)
+        return job
+
+    def _llm_enrich(self, job: ParsedJob) -> ParsedJob:
+        """Use LLM to fill gaps and improve job requirement extraction."""
+        llm = get_client()
+        if not llm.available:
+            return job
+
+        user = JOB_PARSE_USER.format(job_text=job.raw_text[:6000])
+        data = llm.complete_json(JOB_PARSE_SYSTEM, user, max_tokens=800)
+        if not data or not isinstance(data, dict):
+            return job
+
+        if not job.title and data.get("title"):
+            job.title = data["title"]
+        if not job.company and data.get("company"):
+            job.company = data["company"]
+        if not job.experience_level and data.get("experience_level"):
+            job.experience_level = data["experience_level"]
+        if job.required_experience_years is None and data.get("required_experience_years"):
+            job.required_experience_years = float(data["required_experience_years"])
+        if not job.domain and data.get("domain"):
+            job.domain = data["domain"]
+
+        # Merge LLM-extracted skills into requirements
+        llm_required = [s.lower() for s in data.get("required_skills", [])]
+        existing_skills = {r.skill for r in job.requirements}
+        for skill in llm_required:
+            if skill not in existing_skills:
+                job.requirements.append(JobRequirement(skill=skill, weight=1.0, is_required=True))
+
+        llm_nice = [s.lower() for s in data.get("nice_to_have", [])]
+        existing_nice = set(job.nice_to_have)
+        for skill in llm_nice:
+            if skill not in existing_nice:
+                job.nice_to_have.append(skill)
+
+        return job
 
     # ── Dict mode (structured input) ──────────────────────────────────────────
 

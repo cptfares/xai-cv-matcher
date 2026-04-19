@@ -1,0 +1,344 @@
+{
+  "cv_name": "Sarah Johnson",
+  "job_title": "Senior Full-Stack Engineer",
+  "generated_at": "2026-04-19T21:27:56.801609+00:00",
+  "overall_score": 74.0,
+  "skill_score": 77.2,
+  "experience_score": 80.0,
+  "seniority_match": false,
+  "matched_skills": [
+    {
+      "job_skill": "agile",
+      "cv_skill": "agile",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "aws",
+      "cv_skill": "aws",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "ci/cd",
+      "cv_skill": "ci/cd",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "docker",
+      "cv_skill": "docker",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "fastapi",
+      "cv_skill": "fastapi",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "git",
+      "cv_skill": "git",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "github",
+      "cv_skill": "github",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "github actions",
+      "cv_skill": "github actions",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "graphql",
+      "cv_skill": "graphql",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "node.js",
+      "cv_skill": "node.js",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "postgresql",
+      "cv_skill": "postgresql",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "python",
+      "cv_skill": "python",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "react",
+      "cv_skill": "react",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "redis",
+      "cv_skill": "redis",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "scrum",
+      "cv_skill": "scrum",
+      "similarity_score": 1.0,
+      "weight": 0.0448,
+      "weighted_contribution": 0.0448,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    },
+    {
+      "job_skill": "typescript",
+      "cv_skill": "typescript",
+      "similarity_score": 1.0,
+      "weight": 0.0493,
+      "weighted_contribution": 0.0493,
+      "is_matched": true,
+      "is_semantic_synonym": false
+    }
+  ],
+  "missing_skills": [
+    {
+      "missing_skill": "django",
+      "importance": 0.049,
+      "upskilling_suggestion": "Study 'django' via official documentation, online courses (Udemy, Coursera), or hands-on projects."
+    },
+    {
+      "missing_skill": "kubernetes",
+      "importance": 0.049,
+      "upskilling_suggestion": "Kubernetes.io interactive tutorials + CKAD/CKA certification path"
+    },
+    {
+      "missing_skill": "jenkins",
+      "importance": 0.045,
+      "upskilling_suggestion": "Study 'jenkins' via official documentation, online courses (Udemy, Coursera), or hands-on projects."
+    },
+    {
+      "missing_skill": "kafka",
+      "importance": 0.027,
+      "upskilling_suggestion": "Confluent Apache Kafka 101 free course"
+    },
+    {
+      "missing_skill": "terraform",
+      "importance": 0.027,
+      "upskilling_suggestion": "HashiCorp Learn platform (learn.hashicorp.com/terraform)"
+    },
+    {
+      "missing_skill": "grafana",
+      "importance": 0.022,
+      "upskilling_suggestion": "Study 'grafana' via official documentation, online courses (Udemy, Coursera), or hands-on projects."
+    },
+    {
+      "missing_skill": "prometheus",
+      "importance": 0.022,
+      "upskilling_suggestion": "Study 'prometheus' via official documentation, online courses (Udemy, Coursera), or hands-on projects."
+    }
+  ],
+  "feature_importances": [
+    {
+      "skill": "kubernetes",
+      "shap_value": -0.0966,
+      "direction": "negative",
+      "explanation": "'kubernetes' is missing from the CV (best similarity: 3%), pulling the score down (SHAP: -0.097)."
+    },
+    {
+      "skill": "django",
+      "shap_value": -0.095,
+      "direction": "negative",
+      "explanation": "'django' is missing from the CV (best similarity: 4%), pulling the score down (SHAP: -0.095)."
+    },
+    {
+      "skill": "jenkins",
+      "shap_value": -0.0822,
+      "direction": "negative",
+      "explanation": "'jenkins' is missing from the CV (best similarity: 8%), pulling the score down (SHAP: -0.082)."
+    },
+    {
+      "skill": "kafka",
+      "shap_value": -0.0551,
+      "direction": "negative",
+      "explanation": "'kafka' is missing from the CV (best similarity: 0%), pulling the score down (SHAP: -0.055)."
+    },
+    {
+      "skill": "terraform",
+      "shap_value": -0.0521,
+      "direction": "negative",
+      "explanation": "'terraform' is missing from the CV (best similarity: 4%), pulling the score down (SHAP: -0.052)."
+    },
+    {
+      "skill": "prometheus",
+      "shap_value": -0.0429,
+      "direction": "negative",
+      "explanation": "'prometheus' is missing from the CV (best similarity: 5%), pulling the score down (SHAP: -0.043)."
+    },
+    {
+      "skill": "aws",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'aws' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "docker",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'docker' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "fastapi",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'fastapi' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "node.js",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'node.js' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "postgresql",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'postgresql' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "python",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'python' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "react",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'react' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "redis",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'redis' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "typescript",
+      "shap_value": 0.0354,
+      "direction": "positive",
+      "explanation": "'typescript' is a strong match (100% similarity), contributing positively (SHAP: +0.035)."
+    },
+    {
+      "skill": "agile",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'agile' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "ci/cd",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'ci/cd' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "git",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'git' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "github",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'github' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "github actions",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'github actions' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "graphql",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'graphql' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "scrum",
+      "shap_value": 0.0321,
+      "direction": "positive",
+      "explanation": "'scrum' is a strong match (100% similarity), contributing positively (SHAP: +0.032)."
+    },
+    {
+      "skill": "grafana",
+      "shap_value": -0.0321,
+      "direction": "negative",
+      "explanation": "'grafana' is missing from the CV (best similarity: 22%), pulling the score down (SHAP: -0.032)."
+    }
+  ],
+  "bias_flags": [],
+  "narrative_recruiter": "Overall match score: 74/100 (16/23 required skills matched). The candidate demonstrates proficiency in: agile, aws, ci/cd, docker, fastapi, git, github, github actions. Key gaps to consider: django, kubernetes, jenkins, kafka, terraform. Recommendation: Moderate match. Conduct a technical screen to validate capabilities.",
+  "narrative_candidate": "Your CV scored 74/100 for this role. You match 16 of 23 required skills. Your strengths align well with: agile, aws, ci/cd, docker, fastapi, git, github, github actions. To improve your match, consider developing: django, kubernetes, jenkins, kafka, terraform. For 'django': Study 'django' via official documentation, online courses (Udemy, Coursera), or hands-on projects.",
+  "upskilling_suggestions": [
+    "django: Study 'django' via official documentation, online courses (Udemy, Coursera), or hands-on projects.",
+    "kubernetes: Kubernetes.io interactive tutorials + CKAD/CKA certification path",
+    "jenkins: Study 'jenkins' via official documentation, online courses (Udemy, Coursera), or hands-on projects.",
+    "kafka: Confluent Apache Kafka 101 free course",
+    "terraform: HashiCorp Learn platform (learn.hashicorp.com/terraform)",
+    "grafana: Study 'grafana' via official documentation, online courses (Udemy, Coursera), or hands-on projects.",
+    "prometheus: Study 'prometheus' via official documentation, online courses (Udemy, Coursera), or hands-on projects."
+  ]
+}
